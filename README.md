@@ -84,12 +84,14 @@ python main.py
 ### The Smooth-Pasting Condition
 
 Unlike European options, American Put values must merge tangentially into the payoff function at the optimal exercise boundary . This repository validates that:
+$$\frac{\partial V}{\partial S} \bigg|_{S = S^*} = -1$$ 
 
 
 ### Non-Uniform Finite Difference
 
 To handle the "space refinement" requirement, we utilize a generalized stencil for the second derivative:
 
+$$\frac{\partial^2 V}{\partial S^2} \approx \frac{2}{h_i + h_{i-1}} \left( \frac{V_{i+1} - V_i}{h_i} - \frac{V_i - V_{i-1}}{h_{i-1}} \right)$$
 
 ---
 
